@@ -161,15 +161,19 @@ class ToastManager extends Component<Props, State> {
       icon,
     })
     if (position) this.setState({ position })
+    //  @ts-ignore
     this.isShow = true
     if (duration !== this.props.end) this.close(duration)
   }
 
   close = (duration?: number) => {
+    //  @ts-ignore
     if (!this.isShow && !this.state.isShow) return
     this.resetAll()
+    //  @ts-ignore
     this.timer = setTimeout(() => {
       this.setState({ isShow: false })
+      //  @ts-ignore
     }, duration || this.state.duration)
   }
 
@@ -183,20 +187,25 @@ class ToastManager extends Component<Props, State> {
   handleBar = () => {
     Animated.timing(this.state.barWidth, {
       toValue: 0,
+      //  @ts-ignore
       duration: this.state?.duration,
       useNativeDriver: false,
     }).start()
   }
 
   pause = () => {
+    //  @ts-ignore
     this.setState({ oldDuration: this.state.duration, duration: 10000 })
+    //  @ts-ignore
     Animated.timing(this.state.barWidth).stop()
   }
 
   resume = () => {
+    //  @ts-ignore
     this.setState({ duration: this.state.oldDuration, oldDuration: 0 })
     Animated.timing(this.state.barWidth, {
       toValue: 0,
+      //  @ts-ignore
       duration: this.state.duration,
       useNativeDriver: false,
     }).start()
@@ -205,11 +214,14 @@ class ToastManager extends Component<Props, State> {
   hideToast = () => {
     this.resetAll()
     this.setState({ isShow: false })
+    //  @ts-ignore
     this.isShow = false
+    //  @ts-ignore
     if (!this.isShow && !this.state.isShow) return
   }
 
   resetAll = () => {
+    //  @ts-ignore
     clearTimeout(this.timer)
   }
 

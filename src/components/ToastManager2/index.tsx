@@ -90,7 +90,7 @@ export default function ToastManager2(props: Props) {
   })
 
   const [timer, setTimer] = useState(0)
-
+  //  @ts-ignore
   function show(
     text = '',
     barColor = Colors.default,
@@ -99,6 +99,7 @@ export default function ToastManager2(props: Props) {
   ) {
     setState({
       ...state,
+      //  @ts-ignore
       barWidth: props.width,
       isShow: true,
       duration: props.duration || defaultProps.duration,
@@ -162,7 +163,7 @@ export default function ToastManager2(props: Props) {
     const timeOut = setTimeout(() => {
       setState({ ...state, isShow: false })
     }, durationProps || state.duration)
-
+    //  @ts-ignore
     setTimer(timeOut)
   }
 
@@ -174,7 +175,7 @@ export default function ToastManager2(props: Props) {
     text,
     barWidth,
   } = state
-
+  //  @ts-ignore
   useEffect(() => {
     onHandleBar()
   }, [])

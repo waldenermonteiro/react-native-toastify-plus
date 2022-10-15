@@ -1,9 +1,9 @@
 {
   "name": "react-native-toastify-plus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "homepage": "https://github.com/waldenermonteiro/react-native-toastify-plus#readme",
-  "main": "src/index.tsx",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "Waldener Monteiro <waldener.dev@gmail.com>",
   "license": "MIT",
