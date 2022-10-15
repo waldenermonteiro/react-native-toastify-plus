@@ -1,12 +1,18 @@
 import React, { useEffect } from 'react'
-import RNModuleTemplateModule, { Counter } from 'react-native-module-template'
+import ToastManager, { Toast } from 'react-native-toastify-plus'
 
 const App = () => {
   useEffect(() => {
-    console.log(RNModuleTemplateModule)
+    setTimeout(() => {
+      Toast.success("teste message")
+    }, 3000);
   })
 
-  return <Counter />
+  return (
+    <>
+      <ToastManager />
+    </>
+  )
 }
 
 export default App
