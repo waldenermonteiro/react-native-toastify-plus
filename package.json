@@ -1,6 +1,6 @@
 {
   "name": "react-native-toastify-plus",
-  "version": "1.0.1",
+  "version": "1.0.9",
   "description": "",
   "homepage": "https://github.com/waldenermonteiro/react-native-toastify-plus#readme",
   "main": "lib/index.js",

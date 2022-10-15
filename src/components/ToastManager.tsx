@@ -64,7 +64,9 @@ interface State {
 }
 
 class ToastManager extends Component<Props, State> {
+  // @ts-ignore
   static __singletonRef: ToastManager
+
   static defaultProps: {
     animationInTiming: number
     animationOutTiming: number
@@ -115,7 +117,7 @@ class ToastManager extends Component<Props, State> {
   }
 
   static info = (text: string, position?: string) => {
-    ToastManager.__singletonRef.show(
+    ToastManager.__singletonRef?.show(
       text,
       Colors.info,
       'ios-information-circle',
@@ -124,7 +126,7 @@ class ToastManager extends Component<Props, State> {
   }
 
   static success = (text: string, position?: string) => {
-    ToastManager.__singletonRef.show(
+    ToastManager.__singletonRef?.show(
       text,
       Colors.success,
       'checkmark-circle',
@@ -133,11 +135,11 @@ class ToastManager extends Component<Props, State> {
   }
 
   static warn = (text: string, position: string) => {
-    ToastManager.__singletonRef.show(text, Colors.warn, 'warning', position)
+    ToastManager.__singletonRef?.show(text, Colors.warn, 'warning', position)
   }
 
   static error = (text: string, position: string) => {
-    ToastManager.__singletonRef.show(
+    ToastManager.__singletonRef?.show(
       text,
       Colors.error,
       'alert-circle',
@@ -152,7 +154,9 @@ class ToastManager extends Component<Props, State> {
     position?: string
   ) => {
     const { duration } = this.props
+
     this.state.barWidth.setValue(this.props.width)
+
     this.setState({
       isShow: true,
       duration,
