@@ -5,7 +5,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       Toast.success("teste message")
-    }, 3000);
+    }, 1000);
   })
 
   return (
