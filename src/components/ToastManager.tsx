@@ -8,7 +8,7 @@ import {
 } from 'react-native'
 import Modal, { ModalProps } from 'react-native-modal'
 import { RFPercentage } from 'react-native-responsive-fontsize'
-import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import { Colors } from '../config/theme'
 import defaultProps from '../utils/defaultProps'
@@ -98,7 +98,7 @@ class ToastManager extends Component<Props, State> {
     opacityValue: new Animated.Value(1),
     barWidth: new Animated.Value(RFPercentage(32)),
     barColor: Colors.default,
-    icon: 'checkmark-circle',
+    icon: 'check-circle',
     position: this.props.position,
     animationStyle: {
       upInUpOut: {
@@ -120,7 +120,7 @@ class ToastManager extends Component<Props, State> {
     ToastManager.__singletonRef?.show(
       text,
       Colors.info,
-      'ios-information-circle',
+      'information',
       position
     )
   }
@@ -129,13 +129,13 @@ class ToastManager extends Component<Props, State> {
     ToastManager.__singletonRef?.show(
       text,
       Colors.success,
-      'checkmark-circle',
+      'check-circle',
       position
     )
   }
 
   static warn = (text: string, position: string) => {
-    ToastManager.__singletonRef?.show(text, Colors.warn, 'warning', position)
+    ToastManager.__singletonRef?.show(text, Colors.warn, 'alert', position)
   }
 
   static error = (text: string, position: string) => {
@@ -298,11 +298,7 @@ class ToastManager extends Component<Props, State> {
             activeOpacity={0.9}
             style={styles.hideButton}
           >
-            <Icon
-              name='ios-close-outline'
-              size={22}
-              color={Colors[theme].text}
-            />
+            <Icon name='close' size={22} color={Colors[theme].text} />
           </TouchableOpacity>
           <View style={styles.content}>
             <Icon
